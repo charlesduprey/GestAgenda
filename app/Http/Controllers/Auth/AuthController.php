@@ -63,4 +63,8 @@ class AuthController extends Controller
             'admin' => isset($data['admin']),
         ]);
     }
+
+    protected $redirectTo = 'post';
+
+    protected $redirectAfterLogout = 'post';
 }
