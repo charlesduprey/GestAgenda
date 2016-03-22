@@ -29,6 +29,12 @@
                     <?php echo $errors->first('contenu', '<small class="help-block">:message</small>'); ?>
 
                 </div>
+                <div class="form-group <?php echo e($errors->has('tags') ? 'has-error' : ''); ?>">
+                    <?php echo Form::text('tags', null, array('class' => 'form-control', 'placeholder' => 'Entrez les tags séparés par des virgules')); ?>
+
+                    <?php echo $errors->first('tags', '<small class="help-block">:message</small>'); ?>
+
+                </div>
                 <?php echo Form::submit('Envoyer !', ['class' => 'btn btn-info pull-right']); ?>
 
                 <?php echo Form::close(); ?>
@@ -40,4 +46,4 @@
         </a>
     </div>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('templateRelation', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('template', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

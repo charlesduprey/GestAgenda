@@ -1,0 +1,62 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: guill_000
+ * Date: 09/12/2015
+ * Time: 19:51
+ */
+?>
+
+
+
+<?php $__env->startSection('contenu'); ?>
+    <div class="col-sm-offset-4 col-sm-4">
+        <br>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Création d'un utilisateur</div>
+            <div class="panel-body">
+                <div class="col-sm-12">
+                    <?php echo Form::open(['url' => 'user', 'method' => 'post', 'class' => 'form-horizontal panel']); ?>
+
+                    <div class="form-group <?php echo $errors->has('name') ? 'has-error' : ''; ?>">
+                        <?php echo Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nom']); ?>
+
+                        <?php echo $errors->first('name', '<small class="help-block">:message</small>'); ?>
+
+                    </div>
+                    <div class="form-group <?php echo $errors->has('email') ? 'has-error' : ''; ?>">
+                        <?php echo Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email']); ?>
+
+                        <?php echo $errors->first('name', '<small class="help-block">:message</small>'); ?>
+
+                    </div>
+                    <div class="form-group <?php echo $errors->has('password') ? 'has-error' : ''; ?>">
+                        <?php echo Form::password('password', ['class' => 'form-control', 'placeholder' => 'Mot de passe']); ?>
+
+                        <?php echo $errors->first('password', '<small class="help-block">:message</small>'); ?>
+
+                    </div>
+                    <div class="form-group">
+                        <?php echo Form::password('password_confirmation', ['class' => 'form-control', 'placeholder' => 'Confirmation mot de passe']); ?>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <?php echo Form::checkbox('admin', 1, null); ?> Administrateur
+                            </label>
+                        </div>
+                    </div>
+                    <?php echo Form::submit('Envoyer', ['class' => 'btn btn-primary pull-right']); ?>
+
+                    <?php echo Form::close(); ?>
+
+                </div>
+            </div>
+        </div>
+        <a href="javascript:history.back()" class="btn btn-primary">
+            <span class="glyphicon glyphicon-circle-arrow-left"></span> Retour
+        </a>
+    </div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('template', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
