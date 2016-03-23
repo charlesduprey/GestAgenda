@@ -17,6 +17,7 @@
                 display: table;
                 font-weight: 100;
                 font-family: 'Lato';
+                background-color: #DFF2FF;
             }
 
             .container {
@@ -33,12 +34,27 @@
             .title {
                 font-size: 96px;
             }
+
+            .title2 {
+                font-size: 40px;
+            }
+
+            a:link, a:visited, a:hover, a:active {
+                color: black;
+                text-decoration: none;
+            }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <div class="title">GestAgenda</div>
+
+                <br><br>
+                <hr/>
+                <br><br>
+
+                <div class="title2"><a href="{{ url('/auth/login') }}">Se connecter</a></div>
             </div>
         </div>
     </body>
