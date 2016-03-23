@@ -64,7 +64,7 @@ class AuthController extends Controller
         ]);
     }
 
-    protected $redirectTo = 'post';
+    // protected $redirectTo = 'post';
 
-    protected $redirectAfterLogout = 'post';
+    // protected $redirectAfterLogout = 'post';
 }

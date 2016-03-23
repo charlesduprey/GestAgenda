@@ -7,7 +7,7 @@
  */
 ?>
 
-@extends('template')
+@extends('adminLTE')
 
 @section('contenu')
     <br>

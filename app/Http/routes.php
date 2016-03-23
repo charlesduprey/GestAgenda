@@ -19,3 +19,5 @@ Route::resource('user', 'UserController');
 
 Route::resource('post', 'PostController', ['except' => ['show', 'edit', 'update']]);
 Route::get('post/tag/{tag}', 'PostController@indexTag');
+
+Route::get('page1', 'PremierePageController@index');
