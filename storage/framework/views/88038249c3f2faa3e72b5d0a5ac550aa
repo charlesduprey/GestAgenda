@@ -32,7 +32,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </head>
-  <body class="skin-blue">
+  <body class="skin-blue sidebar-collapse">
     <div class="wrapper">
 
       <?php echo $__env->make('adminLTE\header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
