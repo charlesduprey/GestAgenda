@@ -22,9 +22,11 @@ class UserRepository
 
     private function save(User $user, Array $inputs)
     {
-        $user->name = $inputs['name'];
+        $user->nom = $inputs['nom'];
+        $user->prenom = $inputs['prenom'];
         $user->email = $inputs['email'];
         $user->admin = isset($inputs['admin']);
+        //$user->id_classe = $inputs['id_classe'];
 
         $user->save();
     }
