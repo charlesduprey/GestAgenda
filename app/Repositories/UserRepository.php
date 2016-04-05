@@ -26,7 +26,7 @@ class UserRepository
         $user->prenom = $inputs['prenom'];
         $user->email = $inputs['email'];
         $user->admin = isset($inputs['admin']);
-        //$user->id_classe = $inputs['id_classe'];
+        $user->id_classe = $inputs['id_classe'];
 
         $user->save();
     }

@@ -15,8 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('user', 'UserController', ['except' => ['show', 'edit', 'create']]);
-Route::get('create_user', 'UserController@create');
+Route::resource('user', 'UserController');
+Route::resource('classe', 'ClasseController');
 
 Route::resource('post', 'PostController', ['except' => ['show', 'edit', 'update']]);
 Route::get('post/tag/{tag}', 'PostController@indexTag');

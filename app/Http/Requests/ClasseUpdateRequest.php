@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class UserCreateRequest extends Request
+class ClasseUpdateRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,12 +23,9 @@ class UserCreateRequest extends Request
      */
     public function rules()
     {
+        $id = $this->segment(2);
         return [
-            'nom' => 'required|max:255|unique:users',
-            'prenom' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|confirmed|min:6',
-            'id_classe' => 'required'
+            'intitule' => 'required|max:255|unique:classe,intitule,' . $id
         ];
     }
 }

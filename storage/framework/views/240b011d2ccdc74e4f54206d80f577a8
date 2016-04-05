@@ -11,7 +11,7 @@
 
 <?php $__env->startSection('contenu'); ?>
     <br>
-    <a class="col-sm-offset-4 col-sm-4">
+    <div class="col-sm-offset-4 col-sm-4">
         <?php if(session()->has('ok')): ?>
             <div class="alert alert-success alert-dismissible"><?php echo session('ok'); ?></div>
         <?php endif; ?>
@@ -49,12 +49,10 @@
                 </tbody>
             </table>
         </div>
-            <div>
-                <a href="create_user" class="btn btn-primary">
-                    <span class="glyphicon glyphicon-circle-arrow-left"></span> Retour
-                </a>
-            </div>
+        <?php echo link_to_route('user.create', 'Ajouter un utilisateur', [], ['class' => 'btn btn-info pull-right']); ?>
+
+        <?php echo $links; ?>
+
     </div>
 <?php $__env->stopSection(); ?>
-
 <?php echo $__env->make('adminLTE', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

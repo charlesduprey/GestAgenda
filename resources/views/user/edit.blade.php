@@ -7,7 +7,7 @@
  */
 ?>
 
-@extends('admin')
+@extends('adminLTE')
 
 @section('contenu')
     <div class="col-sm-offset-4 col-sm-4">
@@ -18,8 +18,8 @@
                 <div class="col-sm-12">
                     {!! Form::model($user, ['route' => ['user.update', $user->id], 'method' => 'put', 'class' => 'form-horizontal panel']) !!}
                     <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!}">
-                        {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nom']) !!}
-                        {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
+                        {!! Form::text('nom', null, ['class' => 'form-control', 'placeholder' => 'Nom']) !!}
+                        {!! $errors->first('nom', '<small class="help-block">:message</small>') !!}
                     </div>
                     <div class="form-group {!! $errors->has('email') ? 'has-error' : '' !!}">
                         {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email']) !!}

@@ -6,12 +6,13 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'CreateClasseTable' => $baseDir . '/database/migrations/2016_03_25_082521_create_classe_table.php',
+    'ClasseTableSeeder' => $baseDir . '/database/seeds/ClasseTableSeeder.php',
+    'CreateClasseTable' => $baseDir . '/database/migrations/2014_10_12_100001_create_classe_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreatePostTagTable' => $baseDir . '/database/migrations/2015_12_13_134000_create_post_tag_table.php',
     'CreatePostsTable' => $baseDir . '/database/migrations/2015_12_12_154848_create_posts_table.php',
     'CreateTagsTable' => $baseDir . '/database/migrations/2015_12_13_133852_create_tags_table.php',
-    'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
+    'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_100002_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',
