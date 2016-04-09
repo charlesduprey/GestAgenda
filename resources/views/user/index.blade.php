@@ -33,7 +33,7 @@
                 @foreach ($users as $user)
                     <tr>
                         <td>{!! $user->id !!}</td>
-                        <td class="text-primary"><strong>{!! $user->name !!}</strong></td>
+                        <td class="text-primary"><strong>{!! $user->prenom !!} {!! $user->nom !!}</strong></td>
                         <td>{!! link_to_route('user.show', 'Voir', [$user->id], ['class' => 'btn btn-success btn-block']) !!}</td>
                         <td>{!! link_to_route('user.edit', 'Modifier', [$user->id], ['class' => 'btn btn-warning btn-block']) !!}</td>
                         <td>

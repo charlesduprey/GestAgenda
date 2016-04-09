@@ -7,23 +7,30 @@
  */
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class UserTableSeeder extends Seeder {
+
+    private function randDate()
+    {
+        return Carbon::createFromDate(null, rand(1, 12), rand(1, 28));
+    }
 
     public function run()
     {
         DB::table('users')->delete();
 
-        for($i = 0; $i < 3; ++$i)
-        {
-            DB::table('users')->insert([
-                'nom' => 'Nom' . $i,
-                'prenom' => 'Prenom' . $i,
-                'email' => 'email' . $i . '@blop.fr',
-                'password' => bcrypt('password' . $i),
-                'admin' => rand(0, 1),
-                'id_classe' => rand(1, 6)
-            ]);
-        }
+        $date = $this->randDate();
+
+        DB::table('users')->insert([
+            'nom' => 'Rodier',
+            'prenom' => 'Guillaume',
+            'email' => 'guillaume.rodier@outlook.fr',
+            'password' => bcrypt('azerty'),
+            'admin' => rand(0, 1),
+            'id_classe' => rand(1, 6),
+            'created_at' => $date,
+            'updated_at' => $date
+        ]);
     }
 }

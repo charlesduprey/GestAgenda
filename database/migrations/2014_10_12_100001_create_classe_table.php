@@ -16,6 +16,7 @@ class CreateClasseTable extends Migration
             $table->increments('id');
             $table->string('Niveau', 80);
             $table->string('Libelle', 10);
+            $table->timestamps();
         });
     }
 
@@ -26,9 +27,6 @@ class CreateClasseTable extends Migration
      */
     public function down()
     {
-        Schema::table('classe', function(Blueprint $table) {
-            $table->dropForeign('posts_user_id_foreign');
-        });
         Schema::drop('classe');
     }
 }

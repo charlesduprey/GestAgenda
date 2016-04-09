@@ -24,7 +24,8 @@ class ClasseCreateRequest extends Request
     public function rules()
     {
         return [
-            'intitule' => 'required|max:255|unique:classe'
+            'Niveau' => 'required|max:255,Niveau,',
+            'Libelle' => 'required|max:255,Libelle,'
         ];
     }
 }

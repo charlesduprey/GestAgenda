@@ -20,9 +20,10 @@ class ClasseRepository
         $this->classe = $classe;
     }
 
-    private function save(User $user, Array $inputs)
+    private function save(Classe $classe, Array $inputs)
     {
-        $classe->intitule = $inputs['intitule'];
+        $classe->Niveau = $inputs['Niveau'];
+        $classe->Libelle = $inputs['Libelle'];
 
         $classe->save();
     }
@@ -34,12 +35,7 @@ class ClasseRepository
 
     public function store(Array $inputs)
     {
-        $classe = new $this->user;
-        $classe->password = bcrypt($inputs['password']);
-
-        $this->save($classe, $inputs);
-
-        return $classe;
+        return $this->classe->create($inputs);
     }
 
     public function getById($id)

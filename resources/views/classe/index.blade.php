@@ -33,7 +33,7 @@
                 @foreach ($classes as $classe)
                     <tr>
                         <td>{!! $classe->id !!}</td>
-                        <td class="text-primary"><strong>{!! $classe->intitule !!}</strong></td>
+                        <td class="text-primary"><strong>{!! $classe->Niveau !!} {!! $classe->Libelle !!}</strong></td>
                         <td>{!! link_to_route('classe.show', 'Voir', [$classe->id], ['class' => 'btn btn-success btn-block']) !!}</td>
                         <td>{!! link_to_route('classe.edit', 'Modifier', [$classe->id], ['class' => 'btn btn-warning btn-block']) !!}</td>
                         <td>

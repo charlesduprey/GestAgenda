@@ -1,0 +1,26 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Guillaume
+ * Date: 10/03/2016
+ * Time: 19:22
+ */
+?>
+
+
+
+<?php $__env->startSection('contenu'); ?>
+    <div class="col-sm-offset-4 col-sm-4">
+        <br>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Fiche d'une classe</div>
+            <div class="panel-body">
+                <p>Intitulé : <?php echo e($classe->Niveau); ?> <?php echo $classe->Libelle; ?></p>
+            </div>
+        </div>
+        <a href="javascript:history.back()" class="btn btn-primary">
+            <span class="glyphicon glyphicon-circle-arrow-left"></span> Retour
+        </a>
+    </div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('adminLTE', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -25,7 +25,8 @@ class ClasseUpdateRequest extends Request
     {
         $id = $this->segment(2);
         return [
-            'intitule' => 'required|max:255|unique:classe,intitule,' . $id
+            'Niveau' => 'required|max:255,Niveau,' . $id,
+            'Libelle' => 'required|max:255,Libelle,' . $id
         ];
     }
 }

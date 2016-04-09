@@ -11,6 +11,8 @@
 var_dump($classes);
 var_dump($classes[0][0]->Niveau . ' ' . $classes[0][0]->Libelle);
 die;*/
+
+//var_dump(DB::table('classe')->select('Niveau', 'Libelle')->get()->Niveau);die;
 ?>
 
 @extends('adminLTE')
@@ -44,17 +46,13 @@ die;*/
                     </div>
                     <div class="form-group">
                         <?php
-                            $classes = [DB::table('classe')->select('Niveau', 'Libelle')->get()];
-                            // {!! Form::select('id_classe', $classes[0]->Niveau, $attributes = array('class'=>'form-control')) !!}
-                            $libelleClasse = array();
-
-                            foreach ($classes[0] as $classe)
-                                array_push($libelleClasse, $classe->Niveau . ' ' . $classe->Libelle);
-
-                            //var_dump($libelleClasse);die;
+                            $classes = DB::table('classe')->select('Niveau', 'Libelle')->get();
+                            $libelleClasse = array('Sélectionner la classe');
+                            foreach ($classes as $classe)
+                                array_push($libelleClasse, $classe->Niveau . ' ' . $classe->Libelle)
                         ?>
 
-                        {!! Form::select('id_classe', $libelleClasse, null, ['class' => 'form-control', 'placeholder' => 'Sélectionner la classe']) !!}
+                        {!! Form::select('id_classe', $libelleClasse, null, ['class' => 'form-control']) !!}
                         {!! $errors->first('id', '<small class="help-block">:message</small>') !!}
                     </div>
                     <div class="form-group">

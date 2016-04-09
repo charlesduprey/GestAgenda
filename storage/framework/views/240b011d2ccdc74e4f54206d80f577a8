@@ -33,7 +33,7 @@
                 <?php foreach($users as $user): ?>
                     <tr>
                         <td><?php echo $user->id; ?></td>
-                        <td class="text-primary"><strong><?php echo $user->name; ?></strong></td>
+                        <td class="text-primary"><strong><?php echo $user->prenom; ?> <?php echo $user->nom; ?></strong></td>
                         <td><?php echo link_to_route('user.show', 'Voir', [$user->id], ['class' => 'btn btn-success btn-block']); ?></td>
                         <td><?php echo link_to_route('user.edit', 'Modifier', [$user->id], ['class' => 'btn btn-warning btn-block']); ?></td>
                         <td>

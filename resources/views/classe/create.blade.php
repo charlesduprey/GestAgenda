@@ -9,7 +9,7 @@
 
 @extends('adminLTE')
 
-@section('content')
+@section('contenu')
     <div class="col-sm-offset-4 col-sm-4">
         <br>
         <div class="panel panel-primary">
@@ -17,9 +17,13 @@
             <div class="panel-body">
                 <div class="col-sm-12">
                     {!! Form::open(['url' => 'classe', 'method' => 'post', 'class' => 'form-horizontal panel']) !!}
-                    <div class="form-group {!! $errors->has('intitule') ? 'has-error' : '' !!}">
-                        {!! Form::text('intitule', null, ['class' => 'form-control', 'placeholder' => 'Nom']) !!}
-                        {!! $errors->first('intitule', '<small class="help-block">:message</small>') !!}
+                    <div class="form-group {!! $errors->has('Niveau') ? 'has-error' : '' !!}">
+                        {!! Form::text('Niveau', null, ['class' => 'form-control', 'placeholder' => 'Niveau']) !!}
+                        {!! $errors->first('Niveau', '<small class="help-block">:message</small>') !!}
+                    </div>
+                    <div class="form-group {!! $errors->has('Libelle') ? 'has-error' : '' !!}">
+                        {!! Form::text('Libelle', null, ['class' => 'form-control', 'placeholder' => 'Libelle']) !!}
+                        {!! $errors->first('Libelle', '<small class="help-block">:message</small>') !!}
                     </div>
                     {!! Form::submit('Envoyer', ['class' => 'btn btn-primary pull-right']) !!}
                     {!! Form::close() !!}

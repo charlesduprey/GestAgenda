@@ -27,12 +27,12 @@ class classe extends Model implements AuthenticatableContract,
      *
      * @var string
      */
-    protected $table = 'classes';
+    protected $table = 'classe';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['intitule'];
+    protected $fillable = ['Niveau', 'Libelle'];
 }

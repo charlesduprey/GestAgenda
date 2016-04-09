@@ -18,7 +18,7 @@ class ClasseController extends Controller
 
     protected $ClasseRepository;
 
-    protected $nbrPerPage = 4;
+    protected $nbrPerPage = 5000;
 
     public function __construct(ClasseRepository $ClasseRepository)
     {

@@ -22,7 +22,9 @@ class CreateUsersTable extends Migration
             $table->integer('id_classe')->unsigned();
             $table->foreign('id_classe')
                 ->references('id')
-                ->on('classe');
+                ->on('classe')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
             $table->rememberToken();
             $table->timestamps();
 
@@ -36,6 +38,9 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        // Schema::drop('users');
+        Schema::table('users', function(Blueprint $table) {
+            $table->dropForeign('users_id_classe_foreign');
+        });
+        Schema::drop('users');
     }
 }

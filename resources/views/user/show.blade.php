@@ -5,6 +5,8 @@
  * Date: 09/12/2015
  * Time: 19:49
  */
+
+    $classe = DB::table('classe')->where('id', $user->id_classe)->first();
 ?>
 
 @extends('adminLTE')
@@ -15,8 +17,10 @@
         <div class="panel panel-primary">
             <div class="panel-heading">Fiche d'utilisateur</div>
             <div class="panel-body">
-                <p>Nom : {{ $user->name }}</p>
+                <p>Nom : {{ $user->nom }}</p>
+                <p>Prénom : {{ $user->prenom }}</p>
                 <p>Email : {{ $user->email }}</p>
+                <p>Classe : {{ $classe->Niveau }} {{ $classe->Libelle }}</p>
                 @if($user->admin == 1)
                     Administrateur
                 @endif
