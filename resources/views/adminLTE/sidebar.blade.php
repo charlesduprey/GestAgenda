@@ -19,8 +19,8 @@
                     <i class="fa fa-dashboard"></i> <span>Utilisateurs</span> <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="user"><i class="fa fa-circle-o"></i> Liste des utilisateurs</a></li>
-                    <li><a href="user/create"><i class="fa fa-circle-o"></i> Création d'utilisateurs</a></li>
+                    <li><a href="{{ url('user') }}"><i class="fa fa-circle-o"></i> Liste des utilisateurs</a></li>
+                    <li><a href="{{ url('user/create') }}"><i class="fa fa-circle-o"></i> Création d'utilisateurs</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -30,8 +30,8 @@
                     <!--<span class="label label-primary pull-right">4</span>-->
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="classe"><i class="fa fa-circle-o"></i> Liste des classes</a></li>
-                    <li><a href="classe/create"><i class="fa fa-circle-o"></i> Création de classes</a></li>
+                    <li><a href="{{ url('classe') }}"><i class="fa fa-circle-o"></i> Liste des classes</a></li>
+                    <li><a href="{{ url('classe/create') }}"><i class="fa fa-circle-o"></i> Création de classes</a></li>
                 </ul>
             </li>
             <!--<li>
