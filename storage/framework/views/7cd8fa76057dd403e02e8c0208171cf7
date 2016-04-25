@@ -1,0 +1,52 @@
+<?php $__env->startSection('contenu'); ?>
+    <br>
+    <div class="col-sm-offset-1 col-sm-9">
+        <?php if(session()->has('ok')): ?>
+            <div class="alert alert-success alert-dismissible"><?php echo session('ok'); ?></div>
+        <?php endif; ?>
+        <div class="panel panel-primary *">
+            <div class="panel-heading">
+                <h3 class="panel-title">Liste des événements</h3>
+            </div>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Type de l'événement</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Horaire début</th>
+                    <th>Horaire Fin</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach($evenement as $evenement): ?>
+                    <tr>
+                        <td><?php echo $evenement->id; ?></td>
+                        <td class="text-primary"><strong><?php echo $evenement->typeevent; ?></strong></td>
+                        <td class="text-primary"><strong><?php echo $evenement->description; ?></strong></td>
+                        <td class="text-primary"><strong><?php echo $evenement->date; ?></strong></td>
+                        <td class="text-primary"><strong><?php echo $evenement->horaireDeb; ?></strong></td>
+                        <td class="text-primary"><strong><?php echo $evenement->horaireFin; ?></strong></td>
+                        <td><?php echo link_to_route('evenement.show', 'Voir', [$evenement->id], ['class' => 'btn btn-success btn-block']); ?></td>
+                        <td><?php echo link_to_route('evenement.edit', 'Modifier', [$evenement->id], ['class' => 'btn btn-warning btn-block']); ?></td>
+                        <td>
+                            <?php echo Form::open(['method' => 'DELETE', 'route' => ['evenement.destroy', $evenement->id]]); ?>
+
+                            <?php echo Form::submit('Supprimer', ['class' => 'btn btn-danger btn-block', 'onclick' => 'return confirm(\'Vraiment supprimer cet utilisateur ?\')']); ?>
+
+                            <?php echo Form::close(); ?>
+
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+        <?php echo link_to_route('evenement.create', 'Ajouter un evenement', [], ['class' => 'btn btn-info pull-right']); ?>
+
+        <?php echo $links; ?>
+
+    </div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('adminLTE', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

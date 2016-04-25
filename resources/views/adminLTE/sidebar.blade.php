@@ -37,7 +37,7 @@
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-files-o"></i>
-                    <span>Classes</span><i class="fa fa-angle-left pull-right"></i>
+                    <span>Événements</span><i class="fa fa-angle-left pull-right"></i>
                     <!--<span class="label label-primary pull-right">4</span>-->
                 </a>
                 <ul class="treeview-menu">
