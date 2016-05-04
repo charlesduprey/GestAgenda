@@ -25,7 +25,6 @@ class EvenementCreateRequest extends Request
     {
         return [
             'typeevent' => 'required|max:25',
-            'intitule' => 'required|max:50',
             'description' => 'required|max:255',
             'date' => 'required|max:10',
             'horaireDeb' => 'required|max:10',

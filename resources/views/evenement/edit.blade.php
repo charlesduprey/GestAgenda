@@ -21,11 +21,11 @@
                         {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
                     </div>
                     <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!}">
-                        {!! Form::text('horaireDeb', null, ['class' => 'form-control', 'placeholder' => 'Horaire de debut']) !!}
+                        {!! Form::time('horaireDeb', null, ['class' => 'form-control', 'placeholder' => 'Horaire de debut']) !!}
                         {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
                     </div>
                     <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!}">
-                        {!! Form::text('horaireFin', null, ['class' => 'form-control', 'placeholder' => 'Horaire de fin']) !!}
+                        {!! Form::time('horaireFin', null, ['class' => 'form-control', 'placeholder' => 'Horaire de fin']) !!}
                         {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
                     </div>
                     <div class="form-group {!! $errors->has('id_classe') ? 'has-error' : '' !!}">
