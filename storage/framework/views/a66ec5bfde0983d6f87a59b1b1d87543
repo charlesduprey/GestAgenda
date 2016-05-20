@@ -1,0 +1,66 @@
+<?php $__env->startSection('contenu'); ?>
+    <div class="col-sm-offset-4 col-sm-4">
+        <br>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Modification d'un évènement</div>
+            <div class="panel-body">
+                <div class="col-sm-12">
+                    <?php echo Form::model($evenement, ['route' => ['evenement.update', $evenement->id], 'method' => 'put', 'class' => 'form-horizontal panel']); ?>
+
+                    <div class="form-group <?php echo $errors->has('name') ? 'has-error' : ''; ?>">
+                        <?php echo Form::select('typeevent', ['controle' => 'Controle','cours' => 'Cours'], null, ['class' => 'form-control', 'placeholder' => 'Type événement']); ?>
+
+                        <?php echo $errors->first('name', '<small class="help-block">:message</small>'); ?>
+
+                    </div>
+                    <div class="form-group <?php echo $errors->has('name') ? 'has-error' : ''; ?>">
+                        <?php echo Form::text('description', null, ['class' => 'form-control', 'placeholder' => 'Description']); ?>
+
+                        <?php echo $errors->first('name', '<small class="help-block">:message</small>'); ?>
+
+                    </div>
+                    <div class="form-group <?php echo $errors->has('name') ? 'has-error' : ''; ?>">
+                        <?php echo Form::date('date', null, ['class' => 'form-control', 'placeholder' => 'Date']); ?>
+
+                        <?php echo $errors->first('name', '<small class="help-block">:message</small>'); ?>
+
+                    </div>
+                    <div class="form-group <?php echo $errors->has('name') ? 'has-error' : ''; ?>">
+                        <?php echo Form::time('horaireDeb', null, ['class' => 'form-control', 'placeholder' => 'Horaire de debut']); ?>
+
+                        <?php echo $errors->first('name', '<small class="help-block">:message</small>'); ?>
+
+                    </div>
+                    <div class="form-group <?php echo $errors->has('name') ? 'has-error' : ''; ?>">
+                        <?php echo Form::time('horaireFin', null, ['class' => 'form-control', 'placeholder' => 'Horaire de fin']); ?>
+
+                        <?php echo $errors->first('name', '<small class="help-block">:message</small>'); ?>
+
+                    </div>
+                    <div class="form-group <?php echo $errors->has('id_classe') ? 'has-error' : ''; ?>">
+                        <?php
+                        $classes = DB::table('classe')->select('Niveau', 'Libelle')->get();
+                        $libelleClasse = array('Sélectionner la classe');
+                        foreach ($classes as $classe)
+                                 array_push($libelleClasse, $classe->Niveau . ' ' . $classe->Libelle)
+                        ?>
+                        <?php echo Form::select('id_classe', $libelleClasse, null, ['class' => 'form-control', 'placeholder' => 'Classe']); ?>
+
+                        <?php echo $errors->first('id_classe', '<small class="help-block">:message</small>'); ?>
+
+                    </div>
+
+
+                    <?php echo Form::submit('Envoyer', ['class' => 'btn btn-primary pull-right']); ?>
+
+                    <?php echo Form::close(); ?>
+
+                </div>
+            </div>
+        </div>
+        <a href="javascript:history.back()" class="btn btn-primary">
+            <span class="glyphicon glyphicon-circle-arrow-left"></span> Retour
+        </a>
+    </div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('adminLTE', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
