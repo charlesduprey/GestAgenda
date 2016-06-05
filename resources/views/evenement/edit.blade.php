@@ -39,7 +39,6 @@
                         {!! $errors->first('id_classe', '<small class="help-block">:message</small>') !!}
                     </div>
 
-
                     {!! Form::submit('Envoyer', ['class' => 'btn btn-primary pull-right']) !!}
                     {!! Form::close() !!}
                 </div>

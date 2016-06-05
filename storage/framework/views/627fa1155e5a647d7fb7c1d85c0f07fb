@@ -7,12 +7,12 @@
  */
 ?>
 
-@extends('adminLTE')
+
 
 <!-- Content Header (Page header) -->
    
 
-@section('contenu')
+<?php $__env->startSection('contenu'); ?>
     
     <section class="content-header">
         <h1>
@@ -88,4 +88,6 @@
            
 
  
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('adminLTE', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

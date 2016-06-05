@@ -1,0 +1,45 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Guillaume
+ * Date: 10/03/2016
+ * Time: 19:23
+ */
+?>
+
+
+
+<?php $__env->startSection('contenu'); ?>
+    <div class="col-sm-offset-4 col-sm-4">
+        <br>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Création d'une classe</div>
+            <div class="panel-body">
+                <div class="col-sm-12">
+                    <?php echo Form::open(['url' => 'classe', 'method' => 'post', 'class' => 'form-horizontal panel']); ?>
+
+                    <div class="form-group <?php echo $errors->has('Niveau') ? 'has-error' : ''; ?>">
+                        <?php echo Form::text('Niveau', null, ['class' => 'form-control', 'placeholder' => 'Niveau']); ?>
+
+                        <?php echo $errors->first('Niveau', '<small class="help-block">:message</small>'); ?>
+
+                    </div>
+                    <div class="form-group <?php echo $errors->has('Libelle') ? 'has-error' : ''; ?>">
+                        <?php echo Form::text('Libelle', null, ['class' => 'form-control', 'placeholder' => 'Libelle']); ?>
+
+                        <?php echo $errors->first('Libelle', '<small class="help-block">:message</small>'); ?>
+
+                    </div>
+                    <?php echo Form::submit('Envoyer', ['class' => 'btn btn-primary pull-right']); ?>
+
+                    <?php echo Form::close(); ?>
+
+                </div>
+            </div>
+        </div>
+        <a href="javascript:history.back()" class="btn btn-primary">
+            <span class="glyphicon glyphicon-circle-arrow-left"></span> Retour
+        </a>
+    </div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('adminLTE', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

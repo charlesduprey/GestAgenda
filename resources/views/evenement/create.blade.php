@@ -9,7 +9,7 @@
                 <div class="col-sm-12">
                     {!! Form::open(['url' => 'evenement', 'method' => 'post', 'class' => 'form-horizontal panel']) !!}
                     <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!}">
-                        {!! Form::select('typeevent', ['Contrôle' => 'Contrôle','cours' => 'Cours'], null, ['class' => 'form-control', 'placeholder' => 'Type événement']) !!}
+                        {!! Form::select('typeevent', ['controle' => 'Controle','cours' => 'Cours'], null, ['class' => 'form-control', 'placeholder' => 'Type événement']) !!}
                         {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
                     </div>
                     <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!}">
@@ -35,9 +35,8 @@
                         foreach ($classes as $classe)
                                  array_push($libelleClasse, $classe->Niveau . ' ' . $classe->Libelle)
                         ?>
-
                         {!! Form::select('id_classe', $libelleClasse, null, ['class' => 'form-control']) !!}
-                        {!! $errors->first('id', '<small class="help-block">:message</small>') !!}
+                        {!! $errors->first('id_classe', '<small class="help-block">:message</small>') !!}
                     </div>
 
                     {!! Form::submit('Envoyer', ['class' => 'btn btn-primary pull-right']) !!}
